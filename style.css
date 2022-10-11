@@ -1,0 +1,71 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration:solid;
+}
+#game {
+    width: auto;
+    height: 240px;
+    border: 1px solid black;
+    background-image: linear-gradient(rgb(230, 251, 255), rgb(210, 251, 255));
+}
+#character {
+    width: 20px;
+    height: 50px;
+    background-color: transparent;
+    position: relative;
+    top: 150px;
+    background-image: url("Character.png");
+}
+.move {
+    animation: block 1s infinite linear;
+}
+.animate {
+    animation: jump 500ms;
+}
+@keyframes jump {
+  0%{top: 150;}  
+  30%{top: 120;}  
+  70%{top: 120;}  
+  100%{top: 150;}  
+}
+#block {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    position: relative;
+    top: 130px;
+    left: 480px;
+    background-image: url("Goblin.png");
+}
+@keyframes block {
+    0%{left: 480;}
+    100%{left: -40px;}
+}
+#tree {
+    width: 30px;
+    height: 60px;
+    background-color: transparent;
+    position: relative;
+    top: 140px;
+    left: 50px;
+    background-image: url("Tree.png");
+}
+@keyframes tree {
+    0%{left: 480;}
+    100%{left: -40px;}
+}
+
+#score {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+#highscore {
+    position: relative;
+    left: 300px;
+    top: -10px;
+}
