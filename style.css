@@ -7,7 +7,7 @@
     text-decoration:solid;
 }
 #game {
-    width: 100%;
+    width: 600px;
     height: 240px;
     border: 1px solid black;
     background-image: linear-gradient(rgb(230, 251, 255), rgb(210, 251, 255));
