@@ -8,6 +8,14 @@ var running = false
 var highscore = 0
 var score = 0
 
+function start() {
+    if (block.classList !="move") {
+        Running = true
+        info.innerHTML = `Press space, Up Arrow, or click to jump`;
+        block.classList.add("move")
+        block.classList.add("tree")
+    }
+}
 
 if (localStorage.getItem('HighScore') == null) {
 
@@ -36,6 +44,9 @@ if (localStorage.getItem('HighScore') == null) {
             var device = "Computer";
         }
 
+if (isMobileDevice) {
+    document.getElementById("start").style.display = "block";
+}
 
 function jump() {
     if (character.classList !="animate") {
