@@ -8,6 +8,7 @@ var running = false
 var highscore = 0
 var score = 0
 
+
 if (localStorage.getItem('HighScore') == null) {
 
 } else {
@@ -81,7 +82,8 @@ var checkDead = setInterval(function(){
         tree.classList.remove("move")
         Running = false
         score = 0
-        alert("Bro U so lame. why u so bad man.. ur ugly t00. ")
+        //alert("Bro U so lame. why u so bad man.. ur ugly t00. ")
+        document.getElementById("video").play(); 
         info.innerHTML = `Press Enter to start`;
     }
 },10)
