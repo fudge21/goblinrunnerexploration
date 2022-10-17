@@ -36,6 +36,7 @@ if (localStorage.getItem('HighScore') == null) {
             var device = "Computer";
         }
 
+
 function jump() {
     if (character.classList !="animate") {
         character.classList.add("animate")
