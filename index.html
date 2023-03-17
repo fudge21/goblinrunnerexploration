@@ -1,4 +1,4 @@
-<html lang="en" onclick="jump()" ontouchstart="jump">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>Goblin Runner Exploration</title>
@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <div id="game">
+    <div id="game" onclick="jump()" ontouchstart="jump">
         <p id="score">Score: </p>
         <p id="highscore">HighScore: </p>
         <div id="character"></div>
@@ -22,9 +22,6 @@
         
     </div>
     <button id="start" onclick="start()" style="display:none">start</button>
-    <video id="video" autoplay>
-            <source src="LEGALIZE NUCLEAR BOMBS.mp4" type="video/mp4">
-    </video>
     <p id="info">Press Enter to start</p>
 </body>
 <script src="script.js"></script>
