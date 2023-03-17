@@ -95,7 +95,6 @@ var checkDead = setInterval(function(){
         Running = false
         score = 0
         //alert("Bro U so lame. why u so bad man.. ur ugly t00. ")
-        document.getElementById("video").play(); 
         info.innerHTML = `Press Enter to start`;
     }
 },10)
