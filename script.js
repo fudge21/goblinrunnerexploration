@@ -7,7 +7,7 @@ var highscoretext = document.getElementById("highscore")
 var running = false
 var highscore = 0
 var score = 0
-var speed = 300
+var speed = 1000
 
 function start() {
     if (block.classList !="move") {
@@ -111,7 +111,7 @@ var ScoreFunction = setInterval(function(){
         highscoretext.textContent = "HighScore: " + highscore
         localStorage.setItem('HighScore', highscore);
     }
-    speed+=25
+    speed-=15
     block.style.animationDuration = speed+"ms";
 },1000)
 
