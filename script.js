@@ -12,7 +12,7 @@ var speed = 1000
 function start() {
     if (block.classList !="move") {
         Running = true
-        speed = 300
+        speed = 1000
         info.innerHTML = `Press space, Up Arrow, or click to jump`;
         block.classList.add("move")
         block.classList.add("tree")
