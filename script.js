@@ -7,10 +7,12 @@ var highscoretext = document.getElementById("highscore")
 var running = false
 var highscore = 0
 var score = 0
+var speed = 300
 
 function start() {
     if (block.classList !="move") {
         Running = true
+        speed = 300
         info.innerHTML = `Press space, Up Arrow, or click to jump`;
         block.classList.add("move")
         block.classList.add("tree")
@@ -109,6 +111,8 @@ var ScoreFunction = setInterval(function(){
         highscoretext.textContent = "HighScore: " + highscore
         localStorage.setItem('HighScore', highscore);
     }
+    speed+=25
+    block.style.animationDuration = speed+"ms";
 },1000)
 
 function reportWindowSize() {
