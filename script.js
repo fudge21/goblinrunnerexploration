@@ -7,7 +7,7 @@ var highscoretext = document.getElementById("highscore")
 var running = false
 var highscore = 0
 var score = 0
-var speed = 1000
+var speed = 3000
 
 function start() {
     if (block.classList !="move") {
