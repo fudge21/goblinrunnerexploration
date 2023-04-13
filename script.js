@@ -111,9 +111,17 @@ var ScoreFunction = setInterval(function(){
         highscoretext.textContent = "HighScore: " + highscore
         localStorage.setItem('HighScore', highscore);
     }
-    speed-=15
-    block.style.animationDuration = speed+"ms";
+    //speed-=15
+    //block.style.animationDuration = speed+"ms";
 },1000)
+
+var speedchange = setInterval(function(){
+    if (Running == true) {
+        speed-=15
+    block.style.animationDuration = speed+"ms";
+    }
+    
+},speed)
 
 function reportWindowSize() {
     heightOutput.textContent = window.innerHeight;
