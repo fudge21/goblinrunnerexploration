@@ -7,12 +7,12 @@ var highscoretext = document.getElementById("highscore")
 var running = false
 var highscore = 0
 var score = 0
-var speed = 3000
+var speed = 2000
 
 function start() {
     if (block.classList !="move") {
         Running = true
-        speed = 3000
+        speed = 2000
         info.innerHTML = `Press space, Up Arrow, or click to jump`;
         block.classList.add("move")
         block.classList.add("tree")
