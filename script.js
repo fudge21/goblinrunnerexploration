@@ -5,9 +5,11 @@ var info = document.getElementById("info")
 var scoretext = document.getElementById("score")
 var highscoretext = document.getElementById("highscore")
 var running = false
-var highscore = 0
+var highscore = localStorage.getItem('HighScore')
 var score = 0
 var speed = 2000
+
+
 
 function start() {
     if (block.classList !="move") {
@@ -15,7 +17,8 @@ function start() {
         speed = 2000
         info.innerHTML = `Press space, Up Arrow, or click to jump`;
         block.classList.add("move")
-        block.classList.add("tree")
+        block.style.animationDuration = speed+"ms";
+        tree.classList.add("tree")
     }
 }
 
@@ -113,12 +116,14 @@ var ScoreFunction = setInterval(function(){
     }
     //speed-=15
     //block.style.animationDuration = speed+"ms";
+    info.innerHTML = speed;
 },1000)
 
 var speedchange = setInterval(function(){
     if (Running == true) {
         speed-=15
     block.style.animationDuration = speed+"ms";
+        info.innerHTML = speed;
     }
     
 },speed)
