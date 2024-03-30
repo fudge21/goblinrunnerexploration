@@ -136,11 +136,5 @@ var ScoreFunction = setInterval(function(){
 block.addEventListener("animationend", function () {
     speed-=15
     block.style.animationDuration = speed+"ms";
+    console.log("New Speed: "+speed+"ms")
 });
-
-function reportWindowSize() {
-    heightOutput.textContent = window.innerHeight;
-    widthOutput.textContent = window.innerWidth;
-  }
-  
-window.onresize = reportWindowSize;
