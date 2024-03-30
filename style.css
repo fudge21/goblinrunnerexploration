@@ -24,7 +24,7 @@
     background-image: url("Character.png");
 }
 .move {
-    animation: block 1s infinite linear;
+    animation: block 2s infinite linear;
 }
 .animate {
     animation: jump 500ms;

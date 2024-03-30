@@ -2,6 +2,7 @@ var character = document.getElementById("character")
 var block = document.getElementById("block")
 var tree = document.getElementById("tree")
 var info = document.getElementById("info")
+var gameBox = document.getElementById("game")
 var scoretext = document.getElementById("score")
 var highscoretext = document.getElementById("highscore")
 var running = false
@@ -53,6 +54,8 @@ if (isMobileDevice) {
     document.getElementById("start").style.display = "block";
 }
 
+
+
 function jump() {
     if (character.classList !="animate") {
         character.classList.add("animate")
@@ -63,6 +66,9 @@ function jump() {
     },500)
     
 }
+
+gameBox.addEventListener("mousedown", jump)
+
 window.addEventListener('keydown', function (e) {
     if (e.key == "Enter") {
         if (block.classList !="move") {
@@ -119,14 +125,18 @@ var ScoreFunction = setInterval(function(){
     info.innerHTML = speed;
 },1000)
 
-var speedchange = setInterval(function(){
-    if (Running == true) {
-        speed-=15
-    block.style.animationDuration = speed+"ms";
-        info.innerHTML = speed;
-    }
+// var speedchange = setInterval(function(){
+//     if (Running == true) {
+        
+//         info.innerHTML = speed;
+//     }
     
-},speed)
+// },speed)
+
+block.addEventListener("animationend", function () {
+    speed-=15
+    block.style.animationDuration = speed+"ms";
+});
 
 function reportWindowSize() {
     heightOutput.textContent = window.innerHeight;
