@@ -14,7 +14,7 @@ var speed = 2000
 
 function start() {
     if (block.classList !="move") {
-        Running = true
+        running = true
         speed = 2000
         info.innerHTML = `Press space, Up Arrow, or click to jump`;
         block.classList.add("move")
@@ -57,6 +57,7 @@ if (isMobileDevice) {
 
 
 function jump() {
+    console.log("jump!")
     if (character.classList !="animate") {
         character.classList.add("animate")
     }
@@ -67,12 +68,18 @@ function jump() {
     
 }
 
+block.addEventListener("animationend", function () {
+    speed-=15
+    block.style.animationDuration = speed+"ms";
+    console.log("New Speed: "+speed+"ms")
+});
+
 gameBox.addEventListener("mousedown", jump)
 
 window.addEventListener('keydown', function (e) {
     if (e.key == "Enter") {
         if (block.classList !="move") {
-            Running = true
+            running = true
             info.innerHTML = `Press space, Up Arrow, or click to jump`;
             block.classList.add("move")
             block.classList.add("tree")
@@ -103,7 +110,7 @@ var checkDead = setInterval(function(){
         info.innerHTML = `Click ok or press Enter to continue `;
         block.classList.remove("move")
         tree.classList.remove("move")
-        Running = false
+        running = false
         score = 0
         //alert("Bro U so lame. why u so bad man.. ur ugly t00. ")
         info.innerHTML = `Press Enter to start`;
@@ -111,7 +118,7 @@ var checkDead = setInterval(function(){
 },10)
 
 var ScoreFunction = setInterval(function(){
-    if (Running == true) {
+    if (running == true) {
         score += 1
         scoretext.textContent = "Score: " + score
         if (score >= highscore) {
@@ -122,19 +129,14 @@ var ScoreFunction = setInterval(function(){
     }
     //speed-=15
     //block.style.animationDuration = speed+"ms";
-    info.innerHTML = speed;
+    // info.innerHTML = speed;
 },1000)
 
 // var speedchange = setInterval(function(){
-//     if (Running == true) {
+//     if (running == true) {
         
 //         info.innerHTML = speed;
 //     }
     
 // },speed)
 
-block.addEventListener("animationend", function () {
-    speed-=15
-    block.style.animationDuration = speed+"ms";
-    console.log("New Speed: "+speed+"ms")
-});
